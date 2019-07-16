@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% load crispy_forms_field %}
+
+{% load bootstrap4 %}
+
+{% bootstrap_css %}
+
+{% bootstrap_javascript jquery='full' %}  {# Embed Bootstrap JS+jQuery #}
+
+{{ form.media }}
+
+{% block content %}
+<h1>Nueva Persona</h1>
+<form method="POST">
+    {% csrf_token %}
+    <table>
+
+    {{ form|crispy }}
+  </table>
+    <button type="submit" class="save btn btn-default">Editar</button>
+</form>
+{% endblock %}

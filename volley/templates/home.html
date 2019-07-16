@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>VOLLEY (CLUB VOLLEY CHILE)</h2>
+  <p>Bienvenido: , {% if user.is_authenticated %}{{ user.username }}{% else %}visitor{% endif %}!</p>
+  <p>
+    <strong>Total usuarios registrados: </strong> {{ count }}
+  </p>
+{% endblock %}
