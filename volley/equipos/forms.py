@@ -2,12 +2,12 @@ from django.db import models
 from django.forms import ModelForm
 from django import forms
 from bootstrap_datepicker_plus import DatePickerInput
-from main.models import Persona
+from main.models import Equipo
 
 
-class PersonaForm(forms.ModelForm):
+class EquipoForm(forms.ModelForm):
     class Meta:
-        model = Persona
+        model = Equipo
         exclude = ('es_delete','fecha_crea','fecha_modi')
 
         widgets = {

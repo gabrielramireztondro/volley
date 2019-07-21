@@ -1,6 +1,7 @@
 from django.contrib import admin
 from .models import Pais, SistemaSalud, EstadoCivil, Genero, Club, Posicion, Taller, Persona, Periodo, Dia, EstadoClase, Gimnacio, Plan
 from .models import Region, Provincia, Comuna, Equipo
+
 @admin.register(SistemaSalud)
 class ComentAdmin(admin.ModelAdmin):
     list_display=('descripcion','es_activo','es_delete','fecha_crea','fecha_modi')

@@ -7,9 +7,7 @@ from django.views.generic import TemplateView
 from django.contrib.auth.mixins import LoginRequiredMixin
 
 @login_required
-def home_view(request, *args, **kwargs): # *args, **kwargs
-    print(args, kwargs)
-    print(request.user)
+def home_view(request, *args, **kwargs): 
     count = User.objects.count()
     if User.is_authenticated:
         page="home.html"

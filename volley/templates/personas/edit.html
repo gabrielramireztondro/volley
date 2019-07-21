@@ -13,13 +13,16 @@
 {{ form.media }}
 
 {% block content %}
-<h1>Nueva Persona</h1>
-<form method="POST">
-    {% csrf_token %}
-    <table>
 
-    {{ form|crispy }}
-  </table>
-    <button type="submit" class="save btn btn-default">Editar</button>
-</form>
+<h1>Editando Jugador </h1>
+<div>
+  <form method="POST">
+      {% csrf_token %}
+      <table>
+
+      {{ form|crispy }}
+    </table>
+      <button type="submit" class="save btn btn-default">Editar</button>
+  </form>
+</div>
 {% endblock %}

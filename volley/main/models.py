@@ -293,7 +293,7 @@ class EstadoClase(models.Model):
 class Equipo(models.Model):
     id                  = models.AutoField(primary_key=True)
     descripcion         = models.CharField(blank=False, null=False, max_length=255, unique=True)
-    taller              = models.ForeignKey(Taller,null=False, on_delete=models.DO_NOTHING,verbose_name="Taller")
+    club                = models.ForeignKey(Club,null=False, on_delete=models.DO_NOTHING,verbose_name="Club")
     es_titular          = models.BooleanField(default=True)
     es_interno          = models.BooleanField(default=True)
     es_activo           = models.BooleanField(default=True)

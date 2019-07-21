@@ -1,8 +1,14 @@
+
 {% extends 'base.html' %}
 
 {% block content %}
-  <h2>VOLLEY (CLUB VOLLEY CHILE)</h2>
-  <p>Bienvenido: , {% if user.is_authenticated %}{{ user.username }}{% else %}visitor{% endif %}!</p>
+  <br/>
+  <h2>CVC - CLUB VOLLEY CHILE </h2>
+  <a class="navbar-brand" href="#">
+      {% load static %} 
+    <img src="{% static "img/cropped-IMG_2701.jpg" %}" height="100" alt="mdb logo">
+  </a>
+  <p>Bienvenido: , {% if user.is_authenticated %}{{ user.username }}{% else %} visitor {% endif %}!</p>
   <p>
     <strong>Total usuarios registrados: </strong> {{ count }}
   </p>
