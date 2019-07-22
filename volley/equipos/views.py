@@ -15,7 +15,7 @@ def index_equipo(request): # *args, **kwargs
 
     lista = []
     template_name = 'equipos/index.html'
-    paginate_by = 40
+    paginate_by = 10
     personas    = Persona.objects.filter(es_delete='False')
     equipos     = Equipo.objects.filter(es_delete='False').filter(es_interno=True).filter(club=1)
 

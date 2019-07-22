@@ -24,10 +24,9 @@
             <thead>
                 <tr>
                     <th>Dna</th>
-                    <th>Nombre Persona</th>
-                    <th>Ap. Paterno</th>
-                    <th>Ap. Materno</th>
+                    <th>Nombre Jugador</th>
                     <th>Equipo</th>
+                    <th>Posicion</th>
                     <th>Acciones</th>
                 </tr>
             </thead>
@@ -37,10 +36,9 @@
                 {% for persona in object_list %}
                   <tr>
                       <td>{{ persona.dna }}</td>
-                      <td>{{ persona.nombres }}</td>
-                      <td>{{ persona.apellido_paterno }}</td>
-                      <td>{{ persona.apellido_materno }}</td>
+                      <td>{{ persona.nombres }} {{ persona.apellido_paterno }} {{ persona.apellido_materno }}</td>
                       <td>{{ persona.equipo }}</td>
+                      <td>{{ persona.posicion }}</td>
                       <td>
                         <a class="btn btn-primary" href="{% url 'personas_edit' persona.id %}">Editar</a>
                         <a class="btn btn-danger" href="{% url 'personas_delete' persona.id %}">Eliminar</a>
@@ -58,13 +56,21 @@
             <tr>
                 <th>Dna</th>
                 <th>Nombre persona</th>
-                <th>Ap. Paterno</th>
-                <th>Ap. Materno</th>
                 <th>Equipo</th>
+                <th>Posicion</th>
                 <th>Acciones</th>
               </tr>
           </tfoot>
           </table>
+          <div class="pager">
+              {% if page_obj.has_previous %}
+                <a class="btn btn-success" href="?page={{ page_obj.previous_page_number }}">Previuos</a>
+              {% endif %}
+              {% if page_obj.has_next %}
+                <a class="btn btn-success" href="?page={{ page_obj.next_page_number }}">Next</a>
+              {% endif %}
+            
+          </div>
         </div>
       </div>
     </div>

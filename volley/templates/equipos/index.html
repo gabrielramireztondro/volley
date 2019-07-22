@@ -20,6 +20,7 @@
 
             <thead>
                 <tr>
+                    <th>Taller</th>
                     <th>Equipo</th>
                     <th>N° Jugadores</th>
                     <th>Acciones</th>
@@ -29,6 +30,7 @@
              <tbody>
                     {% for equipo in equipos %}
                     <tr>
+                        <td>{{ equipo.taller }}</td>
                         <td>{{ equipo.descripcion }}</td>
                         {% for equipos in jugadores %}
                           {% ifequal equipos.equipo_id equipo.id  %}
@@ -48,6 +50,7 @@
           </tbody>
           <tfoot>
             <tr>
+                <th>Taller</th>
                 <th>Equipo</th>
                 <th>N° Jugadores</th>
                 <th>Acciones</th>
