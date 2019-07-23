@@ -23,7 +23,6 @@
 
             <thead>
                 <tr>
-                    <th>Dna</th>
                     <th>Nombre Jugador</th>
                     <th>Equipo</th>
                     <th>Posicion</th>
@@ -35,7 +34,6 @@
               {% if object_list %}
                 {% for persona in object_list %}
                   <tr>
-                      <td>{{ persona.dna }}</td>
                       <td>{{ persona.nombres }} {{ persona.apellido_paterno }} {{ persona.apellido_materno }}</td>
                       <td>{{ persona.equipo }}</td>
                       <td>{{ persona.posicion }}</td>
@@ -54,7 +52,6 @@
           </tbody>
           <tfoot>
             <tr>
-                <th>Dna</th>
                 <th>Nombre persona</th>
                 <th>Equipo</th>
                 <th>Posicion</th>
