@@ -354,7 +354,7 @@ class Plan(models.Model):
         db_table="plan"
 
     def __str__(self):
-        return self.descripcion
+        return self.taller
 
     def delete(self):
         pass
@@ -382,7 +382,10 @@ class Persona(models.Model):
     equipo                  = models.ForeignKey(Equipo,null=False, on_delete=models.DO_NOTHING,verbose_name="Equipo")
     posicion                = models.ForeignKey(Posicion,null=False, on_delete=models.DO_NOTHING,verbose_name="Posicion Estudiante")
     observaciones           = models.TextField(blank=True, null=True)
+    es_diestro              = models.BooleanField(default=True)
     es_zurdo                = models.BooleanField(default=False)
+    estatura                = models.DecimalField(max_digits=3, decimal_places=2, blank=True, null=True)
+    peso                    = models.DecimalField(max_digits=5, decimal_places=2, blank=True, null=True)
     es_docente              = models.BooleanField(default=False)
     es_activo               = models.BooleanField(default=True)
     es_delete               = models.BooleanField(default=False)
@@ -422,7 +425,6 @@ class ClaseEnc(models.Model):
         db_table="clase_enc"
 
     def __str__(self):
-        return self.descripcion
-
+        return "Clase Fecha {0} Gimnacio {1} Hi {2} Hf {3} ".format(self.fecha, self.gimnacio, self.hora_inicio, self.hora_fin)
     def delete(self):
         pass

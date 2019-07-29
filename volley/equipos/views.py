@@ -30,4 +30,4 @@ def index_equipo(request): # *args, **kwargs
 
 class EquiposList(ListView):
     model = Equipo
-    template_name = 'equipos/index.html'
+    template_name = 'equipos/lista_equipos.html'

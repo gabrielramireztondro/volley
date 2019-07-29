@@ -34,9 +34,3 @@ class PersonaDelete(DeleteView):
     model = Persona
     template_name = 'personas/delete.html'
     success_url = reverse_lazy('personas')
-    def delete(self):
-        if self.es_delete == False:
-            return True
-        else:
-            self.es_delete = False
-        return true
