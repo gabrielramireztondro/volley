@@ -8,7 +8,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.mixins import LoginRequiredMixin
 from main.models import Equipo, Persona
 from .forms import EquipoForm
-from django.views.generic import ListView, CreateView, UpdateView, DeleteView
+from django.views.generic import DetailView, ListView, CreateView, UpdateView, DeleteView
 
 @login_required
 def index_equipo(request): # *args, **kwargs
@@ -28,6 +28,10 @@ def index_equipo(request): # *args, **kwargs
 
     return render(request, template_name, {'personas': personas, 'equipos': equipos, 'jugadores': lista })
 
-class EquiposList(ListView):
+class EquiposDetail(DetailView):
     model = Equipo
     template_name = 'equipos/lista_equipos.html'
+    queryset=Equipo.objects.all()
+    def get_object(self):
+        id_=self.kwargs.get("id")
+        return get_object_or_404(Equipo,id=id_)
