@@ -28,10 +28,12 @@ def index_equipo(request): # *args, **kwargs
 
     return render(request, template_name, {'personas': personas, 'equipos': equipos, 'jugadores': lista })
 
-class EquiposDetail(DetailView):
-    model = Equipo
+class EquiposListView(ListView):
+    model = Persona
     template_name = 'equipos/lista_equipos.html'
-    queryset=Equipo.objects.all()
-    def get_object(self):
+    paginate_by=10
+
+    def get_queryset(self,*args,**kwargs):
         id_=self.kwargs.get("id")
-        return get_object_or_404(Equipo,id=id_)
+        return Persona.objects.filter(equipo_id=self.kwargs['id'])
+

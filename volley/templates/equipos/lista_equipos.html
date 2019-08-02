@@ -10,8 +10,9 @@
       <div class="card">
         <div class="card-body">
           <hr/>
-          {% if object %}
-              <h2>Editando Equipo {{ object.descripcion }}</h2>
+          {% if object_list %}
+
+              <h2>Editando Equipo {{ nombre_equipo }}</h2>
             
           {% else %}
             <h2>Sin Edicion de Equipo </h2>
@@ -29,19 +30,19 @@
             </thead>
 
              <tbody>
-                    
+                    {% for instancia in object_list %}
                     <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td>{{ instancia.nombres }} {{ instancia.apellido_paterno }} {{ instancia.apellido_materno }} </td>
+                        <td>{{ instancia.genero }}</td>
+                        <td>{{ instancia.posicion }}</td>
+                        <td>{{ instancia.estatura }}</td>
                         <td>
                             <a class="btn btn-primary" href="">Quitar</a>
                             <a class="btn btn-success" href="">Ver Ficha</a>
     
                         </td>
                     </tr>
-                  
+                  {% endfor %}
           </tbody>
           <tfoot>
             <tr>
