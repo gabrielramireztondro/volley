@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<div class="content">
+<form>
+    <br/>
+    <div class="form-group row">
+      <label for="text" class="col-4 col-form-label">BUSCAR JUGADOR</label> 
+      <div class="col-8">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text">
+
+            </div>
+          </div> 
+          <input id="text" name="Buscar" type="text" class="form-control">
+
+          <button name="submit" type="submit" class="btn btn-primary"> <i class="fa fa-eye"></i> </button>
+        </div>
+      </div>
+    </div> 
+  </form>
+</div>
+
+{% endblock %}
+
+

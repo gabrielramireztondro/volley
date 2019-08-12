@@ -10,13 +10,20 @@
       <div class="card">
         <div class="card-body">
           <hr/>
-          {% if object_list %}
 
-              <h2>Editando Equipo {{ nombre_equipo }}</h2>
-            
+          {% if equipo %}
+
+            {% for instancia in equipo %}
+              <h2>Editando Equipo {{ instancia.descripcion }}</h2>
+              <a class="btn btn-primary" href="{% url 'agregar_jugadores' instancia.id %}">Agregar Jugador</a>
+            {% endfor %}
+           
           {% else %}
             <h2>Sin Edicion de Equipo </h2>
+            <a class="btn btn-primary" href="{% url 'agregar_jugadores' 0 %}">Agregar Jugador</a>
+            <p>
           {% endif %}
+
           <table id="example" class="table table-striped table-bordered" style="width:100%">
 
             <thead>
@@ -37,7 +44,7 @@
                         <td>{{ instancia.posicion }}</td>
                         <td>{{ instancia.estatura }}</td>
                         <td>
-                            <a class="btn btn-primary" href="">Quitar</a>
+                            <a class="btn btn-primary" href="{% url 'abandona_equipo' instancia.id %}">Abandona</a>
                             <a class="btn btn-success" href="">Ver Ficha</a>
     
                         </td>
@@ -54,6 +61,8 @@
               </tr>
           </tfoot>
           </table>
+
+
         </div>
       </div>
     </div>

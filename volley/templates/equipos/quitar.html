@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<br/>
+<form method="post">
+	{% csrf_token %}
+	<h3>¿Desea Quitar del equipo a {{ object }}?</h3>	
+	<button class="btn btn-danger" type="submit">Sí, eliminar</button>
+	<a class= "btn btn-default" href="{% url 'equipos' %}">Cancelar</a>
+</form>
+{% endblock %}
